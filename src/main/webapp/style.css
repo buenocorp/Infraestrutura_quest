@@ -1,0 +1,188 @@
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+margin:0;
+padding:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+color:white;
+min-height:100vh;
+}
+
+
+/* TITULO */
+
+h1{
+margin-top:20px;
+font-size:42px;
+letter-spacing:3px;
+text-shadow:2px 2px 15px black;
+}
+
+
+/* TABULEIRO */
+
+.board{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(10,80px);
+gap:8px;
+padding:20px;
+background:rgba(0,0,0,0.35);
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,0.8);
+}
+
+
+/* CASAS */
+
+.cell{
+background:linear-gradient(145deg,#f2f2f2,#d9d9d9);
+border-radius:12px;
+height:80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+color:#333;
+font-size:14px;
+border:2px solid #444;
+transition:all .2s ease;
+position:relative;
+}
+
+
+/* HOVER */
+
+.cell:hover{
+transform:scale(1.08);
+background:linear-gradient(145deg,#fff,#e6e6e6);
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+cursor:pointer;
+}
+
+
+/* CASA PERGUNTA */
+
+.cell.question{
+background:linear-gradient(145deg,#ffd166,#f4a261);
+}
+
+
+/* CASA BONUS */
+
+.cell.bonus{
+background:linear-gradient(145deg,#80ed99,#38b000);
+color:white;
+}
+
+
+/* CASA PENALIDADE */
+
+.cell.penalty{
+background:linear-gradient(145deg,#ff6b6b,#d00000);
+color:white;
+}
+
+
+/* JOGADORES */
+
+.player1{
+font-size:24px;
+color:red;
+text-shadow:0 0 6px black;
+animation:playerPulse 1.2s infinite alternate;
+}
+
+.player2{
+font-size:24px;
+color:#0077ff;
+text-shadow:0 0 6px black;
+animation:playerPulse 1.2s infinite alternate;
+}
+
+
+/* ANIMAÇÃO PEÃO */
+
+@keyframes playerPulse{
+from{ transform:scale(1); }
+to{ transform:scale(1.2); }
+}
+
+
+/* AREA DO DADO */
+
+.dice-area{
+margin-top:20px;
+background:rgba(0,0,0,0.35);
+padding:15px 30px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.6);
+}
+
+
+/* BOTÃO */
+
+button{
+margin-top:10px;
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:10px;
+background:#ffd166;
+color:#333;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+button:hover{
+background:#ffb703;
+transform:scale(1.05);
+}
+
+
+/* PONTUAÇÃO */
+
+.score{
+margin-top:20px;
+background:rgba(0,0,0,0.4);
+padding:15px 25px;
+border-radius:12px;
+font-size:18px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+
+/* PERGUNTAS */
+
+.question-box{
+background:white;
+color:#333;
+padding:30px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+max-width:600px;
+margin-top:40px;
+}
+
+.question-box h2{
+margin-bottom:20px;
+}
+
+.option{
+margin-bottom:12px;
+font-size:16px;
+}
+
+.question-box input{
+margin-right:10px;
+}
+
+.cell.question { background:#ffd166; }
+.cell.bonus { background:#38b000; }
+.cell.penalty { background:#d00000; }
